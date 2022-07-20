@@ -103,18 +103,17 @@ h2{
     
 }
 
-#App{
+/*#App{
     width: 700px;
     height: 500px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    /*background-color: bisque;*/
      position: relative;
      margin: auto;
    
-}
+}*/
 
 
 .cardBoard {
@@ -148,17 +147,16 @@ h2{
 
 }
 
-div .memoryCard {
+/*.div .memoryCard {
     background-image: url("https://www.seekpng.com/png/full/304-3047371_coding-icon-programming-signs.png");
     background-repeat: no-repeat;
     background-size: 100%;
     
-}
+}*/
 
-.front-face {
+ .front-face{
     width: 80px;
     height: 80px;
-    
     position: absolute;
     justify-content: center;
     align-content: center;
@@ -170,13 +168,20 @@ div .memoryCard {
     
 }
 
+.back-face{
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
 .flip {
     transform: rotateY(180deg);
 }
 
-.segundaPantalla{
+/*.segundaPantalla{
     display:none;
-}
+}*/
 
 #div-boton{
  
@@ -265,6 +270,7 @@ div .memoryCard {
     background-color: rgb(216, 69, 69);
    
 }
+
 /*.img{
     margin-left: 25%;
 }*/

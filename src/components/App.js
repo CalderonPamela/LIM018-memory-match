@@ -15,137 +15,136 @@
 //-----Inicio de Memory Match
 //Prueba de rama compartida para la funcion flip match
 
+
 import webdev from '../data/webdev/webdev.js';
-
-
-const saludoUsuario = () =>{
-  //let botonAJugar = document.getElementById('botonAjugar')
-    let nombreUsuario = document.getElementById('nombreUsuario').value
-    let saludoUsuario = document.getElementById('saludoUsuario')
-    
   
+  const itemsWebdev = [...webdev.items,...webdev.items];
+  
+  // Barajar cartas
+   function shuffle(array){
+    return array.sort(()=> { return Math.random()-0.5});   
+  }
+  const sortDobleItem = shuffle(itemsWebdev)
+  console.log(sortDobleItem)
+  
+  const App = (iconos=sortDobleItem) => {
+    
+  //Saludo Usuario
+  //document.getElementById('botonAJugar').addEventListener('click',saludoUsuario);    
+  //botonAJugar.addEventListener('click',saludoUsuario);    
 
-    if (nombreUsuario !== '') {
-      saludoUsuario.innerHTML = `Hola ${nombreUsuario.toUpperCase()}!`
-      primeraPantalla.style.display = 'none'
-      segundaPantalla.style.display = 'block'
-    } else {
-      alert('No ingresaste tu nombre :D!')
-    }
-   return
+  const cardBoard = document.createElement('div');
+  cardBoard.className = 'cardBoard';
+  //el.textContent = 'Hola mundo!';
+   
+  iconos.forEach(item=>{
+  const memoryCard = document.createElement("div");
+  memoryCard.className = 'memoryCard'
+  memoryCard.setAttribute('data-card',`${item.id}`);
+  cardBoard.appendChild(memoryCard);
+
+  const imageIconos = document.createElement("img");
+  imageIconos.className = "front-face";
+  imageIconos.src = `${item.image}`;
+  imageIconos.style.backgroundColor = item.bgColor
+  imageIconos.alt = item.id
+  memoryCard.appendChild(imageIconos);
+
+  const imageCodigo = document.createElement("img");
+  imageCodigo.className = "back-face";
+  imageCodigo.src = './imagenes/carta tapada.jpg';
+  memoryCard.appendChild(imageCodigo);
+
+  memoryCard.addEventListener('click', flipCards)
+
+ }); 
+
+  return cardBoard;
   
 }
-
-  document.getElementById('jugar').addEventListener("click", ()=>{   
-    document.getElementById("div-boton").style.display = 'none';
-    //document.getElementById('primeraPantalla').style.display = 'none';
-    document.getElementById('segundaPantalla').style.display = 'block';
-  })
-
-
-
-const match= () =>{
-  let classMatch = document.getElementsByClassName('flip')
-  if(classMatch.length === 20){
-    document.getElementById('vModal').style.display = 'block';
+ 
+function flipCards(e) {
+  
+  e.currentTarget.style.transform = "rotateY(180deg)";
+  e.currentTarget.classList.add('flip')
+    //clickCartas.push(e.currentTarget)
+    let clickCartas = [...document.getElementsByClassName('flip')];
+    //console.log(clickCartas)
+   
+  if( clickCartas.length === 2) {
+    isMatch(clickCartas);
+    noMatch(clickCartas);
+    clickCartas.forEach((item) => item.classList.remove('flip')); 
   }
 }
 
-  document.getElementById('volver').addEventListener('click', ()=>{
-    document.getElementById('vModal').style.display = 'none';
-    document.getElementById('segundaPantalla').style.display = 'none';
-    document.getElementById('primeraPantalla').style.display = 'block';
-  })
+function isMatch(clickCartas){
+  if (clickCartas[0].dataset.card == clickCartas[1].dataset.card){
+    console.log('hiciste match')
+   // setTimeout(match,700)
+  }
+}
+
+function noMatch(clickCartas){
+  setTimeout(() => {
+      if (clickCartas[0].dataset.card !== clickCartas[1].dataset.card){
+        console.log('no hiciste match')
+          clickCartas[0].style.transform = "rotateY(0deg)";
+          clickCartas[1].style.transform = "rotateY(0deg)";
+          }
+        },800);
+     }
 
 
-     
-      
-
-let clickCartas = []
-const App = () => {
 
 
-  const el = document.createElement('div');
-  el.id = 'App';
-  //el.textContent = 'Hola mundo!';
 
-  //saludo usuario
-  document.getElementById('botonAJugar').addEventListener('click', saludoUsuario)    
 
-  //crear tablero 
-  let cardBoard = document.createElement('div');
-  cardBoard.className = 'cardBoard'
-  el.appendChild(cardBoard)  
 
-  let webdevArray = webdev.items
-  let dobleItems = webdevArray.concat(webdevArray)
-  console.log(dobleItems)
-  // Barajar cartas
-  dobleItems = dobleItems.sort(()=>{return Math.random()-0.5});
-  //console.log(dobleItems);
 
-  // mostrar imagenes en tablero 
-  dobleItems.forEach(mostrarCartas => {
-    let imagenesCartas = mostrarCartas.image
 
-    let memoryCard = document.createElement('div');
-    memoryCard.className = 'memoryCard'
-    memoryCard.id = mostrarCartas.id
-    cardBoard.appendChild(memoryCard)
-  
-    let divIconos = document.createElement('img');
-    divIconos.className ='front-face'
-    divIconos.style.backgroundColor = mostrarCartas.bgColor
-    divIconos.src = imagenesCartas
-    divIconos.alt = mostrarCartas.id
-    memoryCard.appendChild(divIconos)
+  // let clickCartas = []
 
-   
-
-    /*let divIconos2 = document.createElement('img');
-    divIconos2.className ='back-face' 
-    divIconos2.setAttribute ('src', 'https://static.vecteezy.com/system/resources/previews/002/358/541/non_2x/programming-icon-free-vector.jpg');
-    memoryCard.appendChild(divIconos2)*/
-
-    //--- Función Flip Match
-    // Agrege addEventListener y defini la funcion flip
-
-    memoryCard.addEventListener('click', flip)
-
+/*
     function flip(e) {
-      memoryCard.classList.add('flip')
       
-      if (clickCartas.length < 2) {
+      let clickCartas = [...document.getElementsByClassName('flip')];
+      const clickCartasLength = clickCartas.length
 
-        clickCartas.push(e.currentTarget)
+    
+      if( clickCartasLength === 2) {
+        memoryCard.classList.add('flip')
+      clickCartas.push(e.currentTarget)
+        isMatch(clickCartas)
+        noMatch(clickCartas)
+        clickCartas.forEach((memoryCard) =>memoryCard.classlist.remove('flip'));
       }
-      if( clickCartas.length === 2) {
+    }
 
-        if (clickCartas[0].getAttribute('id') === clickCartas[1].getAttribute('id')){
+    function isMatch(clickCartas){
+        if (clickCartas[0].dataset.card === clickCartas[1].dataset.card){
           console.log('hiciste match')
           setTimeout(match,700)
-        
-          clickCartas = []
-        } else if (clickCartas[0].getAttribute('id') !== clickCartas[1].getAttribute('id')){
-          console.log('no hiciste match')
-          setTimeout(() => {
-            //console.log(clickCartas[0])
-            //console.log(clickCartas[1])
-            clickCartas[0].classList.remove('flip')
-            clickCartas[1].classList.remove('flip')
-            clickCartas = []
-          },800)
+  
         }
       }
 
-    }
-    
 
-  });
-  return el;
-};
+  function noMatch(clickCartas){
+    setTimeout(() => {
+        if (clickCartas[0].dataset.card !== clickCartas[1].dataset.card){
+          console.log('no hiciste match')
 
+            clickCartas[0].classList.remove('flip')
+            clickCartas[1].classList.remove('flip')
+            
+            }
+          },800);
+       }
+*/
+   
 export default App;
+export {App,shuffle,isMatch,noMatch};
 
 
 
@@ -155,10 +154,10 @@ export default App;
 
 
 
+/*
 
 
-
-/*//Para acceder al modal
+//Para acceder al modal
 const modal =document.getElementById('modal');
 //Para acceder al boton de volver a jugar
 const reset = document.querySelector('.reset-btn')
@@ -189,4 +188,5 @@ function displayModal(){
         modal.style.display = 'none'
       }
     };
-  }*/
+  }
+*/
