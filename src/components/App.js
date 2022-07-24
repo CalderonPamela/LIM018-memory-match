@@ -22,20 +22,15 @@ import webdev from '../data/webdev/webdev.js';
   
   // Barajar cartas
    function shuffle(array){
-    return array.sort(()=> { return Math.random()-0.5});   
-  }
+    return array.sort(()=> { 
+      return Math.random()-0.5});   
+    }
   const sortDobleItem = shuffle(itemsWebdev)
   console.log(sortDobleItem)
   
   const App = (iconos=sortDobleItem) => {
-    
-  //Saludo Usuario
-  //document.getElementById('botonAJugar').addEventListener('click',saludoUsuario);    
-  //botonAJugar.addEventListener('click',saludoUsuario);    
-
   const cardBoard = document.createElement('div');
   cardBoard.className = 'cardBoard';
-  //el.textContent = 'Hola mundo!';
    
   iconos.forEach(item=>{
   const memoryCard = document.createElement("div");
@@ -62,6 +57,7 @@ import webdev from '../data/webdev/webdev.js';
   return cardBoard;
   
 }
+
  
 function flipCards(e) {
   
@@ -78,70 +74,36 @@ function flipCards(e) {
   }
 }
 
+let score = 0;
+let mostrarScore = document.getElementById('score');
+
+
 function isMatch(clickCartas){
   if (clickCartas[0].dataset.card == clickCartas[1].dataset.card){
     console.log('hiciste match')
-   // setTimeout(match,700)
+    //setTimeout(match,700)
+  
+   score ++;
+   mostrarScore.innerHTML = `Puntuación:${score}`;
+    if (score == 2){
+      mostrarScore.innerHTML = `Puntuación: ${score}`
+     // mostrarTiempo.innerHTML = `Tiempo: ${timerInicial - timer} segundos`;
+      let vModal = document.getElementById('vModal');
+      vModal.style.display = 'block';
+    }
   }
 }
 
 function noMatch(clickCartas){
   setTimeout(() => {
-      if (clickCartas[0].dataset.card !== clickCartas[1].dataset.card){
+    if (clickCartas[0].dataset.card !== clickCartas[1].dataset.card){
         console.log('no hiciste match')
           clickCartas[0].style.transform = "rotateY(0deg)";
           clickCartas[1].style.transform = "rotateY(0deg)";
-          }
-        },800);
-     }
-
-
-
-
-
-
-
-
-
-  // let clickCartas = []
-
-/*
-    function flip(e) {
-      
-      let clickCartas = [...document.getElementsByClassName('flip')];
-      const clickCartasLength = clickCartas.length
-
-    
-      if( clickCartasLength === 2) {
-        memoryCard.classList.add('flip')
-      clickCartas.push(e.currentTarget)
-        isMatch(clickCartas)
-        noMatch(clickCartas)
-        clickCartas.forEach((memoryCard) =>memoryCard.classlist.remove('flip'));
-      }
     }
+  },800);
+}
 
-    function isMatch(clickCartas){
-        if (clickCartas[0].dataset.card === clickCartas[1].dataset.card){
-          console.log('hiciste match')
-          setTimeout(match,700)
-  
-        }
-      }
-
-
-  function noMatch(clickCartas){
-    setTimeout(() => {
-        if (clickCartas[0].dataset.card !== clickCartas[1].dataset.card){
-          console.log('no hiciste match')
-
-            clickCartas[0].classList.remove('flip')
-            clickCartas[1].classList.remove('flip')
-            
-            }
-          },800);
-       }
-*/
    
 export default App;
 export {App,shuffle,isMatch,noMatch};
@@ -154,39 +116,3 @@ export {App,shuffle,isMatch,noMatch};
 
 
 
-/*
-
-
-//Para acceder al modal
-const modal =document.getElementById('modal');
-//Para acceder al boton de volver a jugar
-const reset = document.querySelector('.reset-btn')
-//Para acceder al boton de Play Again
-const playAgain = document.querySelector('.play-again-btn')
-
-
-function AddStats(){
-  const stats = document.querySelector('.modal-content')
-  for (let i = 1; i<=3; i++){
-    const statsElement = document.createElement('p')
-    statsElement.classList.add('stats');
-    stats.appendChild(statsElement);
-  }
-  let p = stats.querySelectorAll('p.stats');
-  p[0].innerHTML = 'Time to complete:' + minutes + 'Minutes and'+ seconds + 'Seconds';
-  p[1].innerHTML = 'Moves Taken'+moves;
-  p[2].innerHTML = 'Your Star Rating is:'+startCount + 'out of 3';
-}
-function displayModal(){
-    const modalClose = document.getElementsByClassName('close')[0]
-    modalClose.style.display = 'block'
-    modalClose.onclick = function(){
-      modalClose.style.display ='none'  
-    };
-    window.onclick = function(event){
-      if(event.target == modal){
-        modal.style.display = 'none'
-      }
-    };
-  }
-*/

@@ -1,5 +1,120 @@
 # Memory Match Game
 
+### Definición del producto
+
+El Juego esta diseñado para personas que deseen pasar un tiempo de distraccion y a la vez practicar su memoria visual.
+La temática el juego esta formada por iconos de logos de programacion por lo que esta orientado a personas que son aficionadas o dedicadas a la programación.
+
+### Historias de usuario
+Historia 1
+COMO jugador de memory match
+QUIERO ingresar a una página de juegos de memory match
+PARA distraerme un poco de la rutina.
+
+CRITERIOS DE ACEPTACIÓN
+1. Se muestra una pantalla de bienvenida al usuario. 
+2. Una opción para ingresar su nombre.
+3. Un botón para empezar a jugar y llevar a la segunda vista.
+
+DEFINICIÓN DE TERMINADO
+1. Que el usuario si pueda ingresar su nombre.
+2. El boton "Start" envie el nombre y me lleve a la siguiente vista.
+
+Historia 2
+COMO jugador del memory match
+QUIERO barajear las cartas
+PARA empezar a jugar.
+
+CRITERIOS DE ACEPTACIÓN
+1. Se debe visualizar las cartas en la pantalla de manera que la imagen este oculta.
+
+DEFINICIÓN DE TERMINADO
+1. En el encabezado se debe mostrar el nombre del usuario.
+2. Se debe visualizar las 20 cartas sin voltear.
+3. El botón "Play Game" debe permitir barajear las cartas para comenzar el juego.
+
+Historia 3
+COMO jugador de Memory Match
+QUIERO poder jugar en todos los dispositivos posibles :móviles y desktops.
+PARA jugar desde cualquier lugar.
+
+CRITERIOS DE ACEPTACIÓN
+1. Que las pantallas (vistas) se ajusten a los diferentes dispositivos.
+2. Las imágenes se ajustan al nuevo formato sin perder la estética del diseño.
+
+DEFINICIÓN DE TERMINADO
+1. El usuario debe visualizar el juego a un tamaño acorde a los dispositivos.
+
+Historia 4
+COMO jugador de memory match 
+QUIERO destapar la carta 
+PARA  encontrar sus pares.
+
+CRITERIOS DE ACEPTACIÓN
+1. Al voltear la primera carta esta se debe quedar destapa para compararla con la segunda.
+2. Si dos cartas volteadas no coinciden, ambas deben regresar a su posición inicial.
+3. Dejar destapadas las cartas que tengan la misma figura.
+
+DEFINICIÓN DE TERMINADO
+1. La primera carta volteada debe permanecer volteada hasta destapar la segunda carta.
+2. Si ambas cartas son del mismo modelo dejarlas destapadas para indicar al usuario que son validas.
+3. En caso contrario cuando  dos cartas destapadas no son del mismo modelo volverlas a tapar.
+
+Historia 5
+COMO jugador del Memory Match
+QUIERO  jugar 
+PARA que el juego me avise si he acertado o no en el match de las cartas.
+
+CRITERIOS DE ACEPTACIÓN
+1. Destapar todas las cartas.
+
+DEFINICIÓN DE TERMINADO
+1. Cuando ambas cartas tenga el mismo modelo se quedaran destapadas de lo contrario volverán a taparse.
+
+Historia 6
+COMO jugador del Memory Match
+QUIERO terminar el juego
+PARA saber si he ganado.
+
+CRITERIOS DE ACEPTACIÓN
+1. El usuario debe ver todas las cartas volteadas en la pantalla.
+2. Sale una ventana avisando que el jugador termina el juego.
+
+DEFINICIÓN DE TERMINADO
+1. Cuando se visualice todas las cartas destapadas significa que el juego ha terminado y el usuario ha ganado.
+2. Automáticamente le saldrá una ventana felicitando al usuario.
+
+
+### Diseño de la Interfaz de Usuario
+
+#### Prototipo de baja fidelidad
+![Primer prototipo](./src/imagenes/prototipo.jpg)
+
+
+#### Prototipo de alta fidelidad
+![Figma 1](./src/imagenes/figma1.jpg)
+![Figma 2](./src/imagenes/figma2.jpg)
+
+#### Testeos de usabilidad
+
+Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
+en base a los resultados, deberás iterar tus diseños. Cuéntanos
+qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
+mejoraste en tu propuesta final.
+
+
+
+
+
+
+
+
+
+
+
+
+# Memory Match Game
+
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
