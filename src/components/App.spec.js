@@ -19,12 +19,7 @@ describe('App', () => {
     expect(cardBoard.querySelectorAll('.memoryCard').length).toBe(4)
   })
 });
-/*
-describe ('App', ()=>{
-  it('App deberia ser una función',()=> {
-    expect(typeof App).toBe('function');
-  });
-});*/
+
 
 describe ('shuffle', ()=>{
   it('shuffle no modifica la cantidad del array',()=> {
