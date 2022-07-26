@@ -7,6 +7,7 @@ La temática el juego esta formada por iconos de logos de programacion por lo qu
 
 ### Historias de usuario
 Historia 1
+
 COMO jugador de memory match
 QUIERO ingresar a una página de juegos de memory match
 PARA distraerme un poco de la rutina.
@@ -21,6 +22,7 @@ DEFINICIÓN DE TERMINADO
 2. El boton "Start" envie el nombre y me lleve a la siguiente vista.
 
 Historia 2
+
 COMO jugador del memory match
 QUIERO barajear las cartas
 PARA empezar a jugar.
@@ -33,7 +35,8 @@ DEFINICIÓN DE TERMINADO
 2. Se debe visualizar las 20 cartas sin voltear.
 3. El botón "Play Game" debe permitir barajear las cartas para comenzar el juego.
 
-Historia 3
+Historia 3 
+
 COMO jugador de Memory Match
 QUIERO poder jugar en todos los dispositivos posibles :móviles y desktops.
 PARA jugar desde cualquier lugar.
@@ -46,6 +49,7 @@ DEFINICIÓN DE TERMINADO
 1. El usuario debe visualizar el juego a un tamaño acorde a los dispositivos.
 
 Historia 4
+
 COMO jugador de memory match 
 QUIERO destapar la carta 
 PARA  encontrar sus pares.
@@ -61,6 +65,7 @@ DEFINICIÓN DE TERMINADO
 3. En caso contrario cuando  dos cartas destapadas no son del mismo modelo volverlas a tapar.
 
 Historia 5
+
 COMO jugador del Memory Match
 QUIERO  jugar 
 PARA que el juego me avise si he acertado o no en el match de las cartas.
@@ -72,6 +77,7 @@ DEFINICIÓN DE TERMINADO
 1. Cuando ambas cartas tenga el mismo modelo se quedaran destapadas de lo contrario volverán a taparse.
 
 Historia 6
+
 COMO jugador del Memory Match
 QUIERO terminar el juego
 PARA saber si he ganado.
