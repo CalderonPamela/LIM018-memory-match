@@ -97,10 +97,13 @@ DEFINICIÓN DE TERMINADO
 
 #### Testeos de usabilidad
 
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
+Durante el testeo del proyecto surgieron las siguientes sugerencias:
+
+1. Unificar un solo idioma para los botones.
+2. Agrandar el tamaño de los las cartas. 
+3. Dar color a las cartas que contienen las imagenes.
+
+
 
 
 

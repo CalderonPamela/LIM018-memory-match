@@ -104,19 +104,6 @@ h2{
     
 }
 
-/*#App{
-    width: 700px;
-    height: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-     position: relative;
-     margin: auto;
-   
-}*/
-
-
 .cardBoard {
     width: 600px;
     height: 440px;
@@ -260,7 +247,7 @@ h2{
 
 @media screen and (max-width :450px) {
     .name{ 
-        width: 130%;
+        width: 120%;
         height: 45px;
         margin-bottom: 30px;
         margin-right: 50px; 
@@ -290,18 +277,18 @@ h2{
 
     #div-boton{
         width: 100%;
-        height: 117vh;
+        height: 170vh;
     }
 
     .vModal{
 
         width: 100%;
-        height: 117vh;
+        height: 170vh;
     }
 
     .modal-content, .modal-img{
          width: 70%;
-         height: 50vh;
+         height: 70vh;
          position: relative;
     }
 }

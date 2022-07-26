@@ -36,8 +36,6 @@ botonVolver.addEventListener("click", () => {
 
 
 
-
-
 /*const match= () =>{
   let classMatch = document.getElementsByClassName('flip')
   if(classMatch.length === 20){

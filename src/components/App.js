@@ -58,7 +58,6 @@ import webdev from '../data/webdev/webdev.js';
   
 }
 
- 
 function flipCards(e) {
   
   e.currentTarget.style.transform = "rotateY(180deg)";
@@ -73,24 +72,21 @@ function flipCards(e) {
     clickCartas.forEach((item) => item.classList.remove('flip')); 
   }
 }
-
+    
 let score = 0;
-let mostrarScore = document.getElementById('score');
-
-
+let mostrarScore = document.getElementById('score'); 
+    
 function isMatch(clickCartas){
   if (clickCartas[0].dataset.card == clickCartas[1].dataset.card){
     console.log('hiciste match')
-    //setTimeout(match,700)
-  
-   score ++;
-   mostrarScore.innerHTML = `Puntuación:${score}`;
-    if (score == 2){
+      score ++;
+      mostrarScore.innerHTML = `Puntuación:${score}`;
+      if (score == 2){
       mostrarScore.innerHTML = `Puntuación: ${score}`
-     // mostrarTiempo.innerHTML = `Tiempo: ${timerInicial - timer} segundos`;
       let vModal = document.getElementById('vModal');
       vModal.style.display = 'block';
-    }
+ }
+
   }
 }
 
@@ -110,7 +106,17 @@ export {App,shuffle,isMatch,noMatch};
 
 
 
+/*let score = 0;
+let mostrarScore = document.getElementById('score');
 
+score ++;
+mostrarScore.innerHTML = `Puntuación:${score}`;
+ if (score == 2){
+   mostrarScore.innerHTML = `Puntuación: ${score}`
+  // mostrarTiempo.innerHTML = `Tiempo: ${timerInicial - timer} segundos`;
+   let vModal = document.getElementById('vModal');
+   vModal.style.display = 'block';
+ }*/
 
 
 

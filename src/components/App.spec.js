@@ -38,14 +38,16 @@ describe ('shuffle', ()=>{
   
 })
 
-/*describe('isMatch',()=>{
+describe('isMatch',()=>{
   let arrayTest = [{dataset: {card: 'git'}},{dataset:{card:'git'}}];
   it ('Se deberia quedar destapadas 2 cartas con el mismo id ',()=>{
   isMatch(arrayTest);
-  expect(arrayTest[0]==arrayTest[1].flip).toBe('flip');
+
+  
+  expect(arrayTest[0]==arrayTest[1].flip).toBeTruthy()('flip');
   })
-  it ('')
-})*/
+  
+})
 
 
 describe('noMatch', ()=>{
