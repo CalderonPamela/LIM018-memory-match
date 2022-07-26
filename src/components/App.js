@@ -13,7 +13,7 @@
 //   .catch(console.error);
 
 //-----Inicio de Memory Match
-//Prueba de rama compartida para la funcion flip match
+
 
 
 import webdev from '../data/webdev/webdev.js';
@@ -81,7 +81,7 @@ function isMatch(clickCartas){
     console.log('hiciste match')
       score ++;
       mostrarScore.innerHTML = `Puntuación:${score}`;
-      if (score == 2){
+      if (score == 10){
       mostrarScore.innerHTML = `Puntuación: ${score}`
       let vModal = document.getElementById('vModal');
       vModal.style.display = 'block';
@@ -106,17 +106,7 @@ export {App,shuffle,isMatch,noMatch};
 
 
 
-/*let score = 0;
-let mostrarScore = document.getElementById('score');
 
-score ++;
-mostrarScore.innerHTML = `Puntuación:${score}`;
- if (score == 2){
-   mostrarScore.innerHTML = `Puntuación: ${score}`
-  // mostrarTiempo.innerHTML = `Tiempo: ${timerInicial - timer} segundos`;
-   let vModal = document.getElementById('vModal');
-   vModal.style.display = 'block';
- }*/
 
 
 
