@@ -62,4 +62,3 @@ it('Debe dar vuelta a la carta cuando 2 cartas son de diferente id ',()=>{
   expect(arrayTest[0].style.transform).not.toBe('rotateY(0deg)');
 })
 });
-
