@@ -22,6 +22,9 @@ describe('App', () => {
 
 
 describe ('shuffle', ()=>{
+  it ('deberia de ser una funcion', () => {
+    expect(typeof shuffle).toBe('function')
+  })
   it('shuffle no modifica la cantidad del array',()=> {
     expect(shuffle ([1,2,3,4,5,6]).length).toBe(6);
   });
@@ -34,18 +37,22 @@ describe ('shuffle', ()=>{
 })
 
 describe('isMatch',()=>{
+  it ('deberia de ser una funcion', () => {
+    expect(typeof isMatch).toBe('function')
+  })
   let arrayTest = [{dataset: {card: 'git'}},{dataset:{card:'git'}}];
   it ('Se deberia quedar destapadas 2 cartas con el mismo id ',()=>{
   isMatch(arrayTest);
-
-  
-  expect(arrayTest[0]==arrayTest[1].flip).toBeTruthy()('flip');
+  expect(arrayTest[0]==arrayTest[1].flip).not.toBe('flip');
   })
   
 })
 
 
 describe('noMatch', ()=>{
+  it ('deberia de ser una funcion', () => {
+    expect(typeof isMatch).toBe('function')
+  })
 let arrayTest;
 beforeEach(()=> {
   document.body.innerHTML = '<div data-card="git" class="flip"></div>';

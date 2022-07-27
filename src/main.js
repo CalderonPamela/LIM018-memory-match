@@ -1,5 +1,6 @@
 import App from './components/App.js';
 
+
 document.getElementById('root').appendChild(App());
 
 let primeraPantalla = document.getElementById('primeraPantalla'); 
@@ -30,4 +31,6 @@ jugar.addEventListener('click' , ()=>{
 botonVolver.addEventListener("click", () => {
   location.reload();
 })
+
+
 

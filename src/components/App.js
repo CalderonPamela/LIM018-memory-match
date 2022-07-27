@@ -17,7 +17,7 @@
 
 
 import webdev from '../data/webdev/webdev.js';
-  
+
   const itemsWebdev = [...webdev.items,...webdev.items];
   
   // Barajar cartas
@@ -68,25 +68,19 @@ function flipCards(e) {
    
   if( clickCartas.length === 2) {
     isMatch(clickCartas);
+   if (isMatch ===true){
+     return puntos()
+   }
     noMatch(clickCartas);
     clickCartas.forEach((item) => item.classList.remove('flip')); 
   }
 }
-    
-let score = 0;
-let mostrarScore = document.getElementById('score'); 
-    
+
+  
 function isMatch(clickCartas){
   if (clickCartas[0].dataset.card == clickCartas[1].dataset.card){
     console.log('hiciste match')
-      score ++;
-      mostrarScore.innerHTML = `Puntuación:${score}`;
-      if (score == 10){
-      mostrarScore.innerHTML = `Puntuación: ${score}`
-      let vModal = document.getElementById('vModal');
-      vModal.style.display = 'block';
- }
-
+    puntos ()
   }
 }
 
@@ -101,11 +95,22 @@ function noMatch(clickCartas){
 }
 
    
+let score = 0;
+let mostrarScore = document.getElementById('score'); 
+const puntos = () =>{
+
+  score ++;
+  mostrarScore.innerHTML = `Puntuación: ${score}`;
+  if (score == 10){
+  mostrarScore.innerHTML = `Puntuación: ${score}`
+  let vModal = document.getElementById('vModal');
+  vModal.style.display = 'block';
+  }
+   
+} 
+
 export default App;
 export {App,shuffle,isMatch,noMatch};
-
-
-
 
 
 
