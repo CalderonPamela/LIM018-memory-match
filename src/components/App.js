@@ -51,7 +51,7 @@ const App = (iconos = sortDobleItem) => {
     imageCodigo.src = './imagenes/carta tapada.jpg';
     memoryCard.appendChild(imageCodigo);
 
-    memoryCaddEventListenerard.('click', function (e) {
+    memoryCard.addEventListener('click', function (e) {
       flipCards(e);
     })
 
@@ -104,7 +104,7 @@ const puntos = () => {
   let mostrarScore = document.getElementById('score');
   score++;
   mostrarScore.innerHTML = `Puntuación: ${score}`;
-  if (score == 4) {
+  if (score == 10) {
     mostrarScore.innerHTML = `Puntuación: ${score}`
     let vModal = document.getElementById('vModal');
     vModal.style.display = 'block';
