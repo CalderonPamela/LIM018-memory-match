@@ -18,99 +18,102 @@
 
 import webdev from '../data/webdev/webdev.js';
 
-  const itemsWebdev = [...webdev.items,...webdev.items];
-  
-  // Barajar cartas
-   function shuffle(array){
-    return array.sort(()=> { 
-      return Math.random()-0.5});   
-    }
-  const sortDobleItem = shuffle(itemsWebdev)
-  console.log(sortDobleItem)
-  
-  const App = (iconos=sortDobleItem) => {
+const itemsWebdev = [...webdev.items, ...webdev.items];
+
+// Barajar cartas
+function shuffle(array) {
+  return array.sort(() => {
+    return Math.random() - 0.5
+  });
+}
+const sortDobleItem = shuffle(itemsWebdev)
+console.log(sortDobleItem)
+
+const App = (iconos = sortDobleItem) => {
   const cardBoard = document.createElement('div');
   cardBoard.className = 'cardBoard';
-   
-  iconos.forEach(item=>{
-  const memoryCard = document.createElement("div");
-  memoryCard.className = 'memoryCard'
-  memoryCard.setAttribute('data-card',`${item.id}`);
-  cardBoard.appendChild(memoryCard);
 
-  const imageIconos = document.createElement("img");
-  imageIconos.className = "front-face";
-  imageIconos.src = `${item.image}`;
-  imageIconos.style.backgroundColor = item.bgColor
-  imageIconos.alt = item.id
-  memoryCard.appendChild(imageIconos);
+  iconos.forEach(item => {
+    const memoryCard = document.createElement("div");
+    memoryCard.className = 'memoryCard'
+    memoryCard.setAttribute('data-card', `${item.id}`);
+    cardBoard.appendChild(memoryCard);
 
-  const imageCodigo = document.createElement("img");
-  imageCodigo.className = "back-face";
-  imageCodigo.src = './imagenes/carta tapada.jpg';
-  memoryCard.appendChild(imageCodigo);
+    const imageIconos = document.createElement("img");
+    imageIconos.className = "front-face";
+    imageIconos.src = `${item.image}`;
+    imageIconos.style.backgroundColor = item.bgColor
+    imageIconos.alt = item.id
+    memoryCard.appendChild(imageIconos);
 
-  memoryCard.addEventListener('click', flipCards)
+    const imageCodigo = document.createElement("img");
+    imageCodigo.className = "back-face";
+    imageCodigo.src = './imagenes/carta tapada.jpg';
+    memoryCard.appendChild(imageCodigo);
 
- }); 
+    memoryCaddEventListenerard.('click', function (e) {
+      flipCards(e);
+    })
+
+  });
 
   return cardBoard;
-  
+
 }
 
 function flipCards(e) {
-  
+
   e.currentTarget.style.transform = "rotateY(180deg)";
   e.currentTarget.classList.add('flip')
-    //clickCartas.push(e.currentTarget)
-    let clickCartas = [...document.getElementsByClassName('flip')];
-    //console.log(clickCartas)
-   
-  if( clickCartas.length === 2) {
+  //clickCartas.push(e.currentTarget)
+  let clickCartas = [...document.getElementsByClassName('flip')];
+  console.log(clickCartas)
+
+  if (clickCartas.length === 2) {
     isMatch(clickCartas);
-   if (isMatch ===true){
-     return puntos()
-   }
-    noMatch(clickCartas);
-    clickCartas.forEach((item) => item.classList.remove('flip')); 
-  }
-}
-
-  
-function isMatch(clickCartas){
-  if (clickCartas[0].dataset.card == clickCartas[1].dataset.card){
-    console.log('hiciste match')
-    puntos ()
-  }
-}
-
-function noMatch(clickCartas){
-  setTimeout(() => {
-    if (clickCartas[0].dataset.card !== clickCartas[1].dataset.card){
-        console.log('no hiciste match')
-          clickCartas[0].style.transform = "rotateY(0deg)";
-          clickCartas[1].style.transform = "rotateY(0deg)";
+    if (isMatch === true) {
+      return puntos()
     }
-  },800);
+    noMatch(clickCartas);
+    clickCartas.forEach((item) => item.classList.remove('flip'));
+  }
 }
 
-   
-let score = 0;
-let mostrarScore = document.getElementById('score'); 
-const puntos = () =>{
 
-  score ++;
-  mostrarScore.innerHTML = `Puntuación: ${score}`;
-  if (score == 10){
-  mostrarScore.innerHTML = `Puntuación: ${score}`
-  let vModal = document.getElementById('vModal');
-  vModal.style.display = 'block';
+function isMatch(clickCartas) {
+  if (clickCartas[0].dataset.card == clickCartas[1].dataset.card) {
+    console.log('hiciste match')
+    puntos()
   }
-   
-} 
+}
+
+function noMatch(clickCartas) {
+  setTimeout(() => {
+    if (clickCartas[0].dataset.card !== clickCartas[1].dataset.card) {
+      console.log('no hiciste match')
+      clickCartas[0].style.transform = "rotateY(0deg)";
+      clickCartas[1].style.transform = "rotateY(0deg)";
+    }
+  }, 800);
+}
+
+
+let score = 0;
+
+const puntos = () => {
+  let mostrarScore = document.getElementById('score');
+  score++;
+  mostrarScore.innerHTML = `Puntuación: ${score}`;
+  if (score == 4) {
+    mostrarScore.innerHTML = `Puntuación: ${score}`
+    let vModal = document.getElementById('vModal');
+    vModal.style.display = 'block';
+  }
+
+}
 
 export default App;
-export {App,shuffle,isMatch,noMatch};
+export { App, shuffle, isMatch, noMatch };
 
 
 

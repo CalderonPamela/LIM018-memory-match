@@ -1,63 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Match</title>
-    <link rel="stylesheet" href="style.css"/>
-  </head>
 
-  <body>
-    <header>
-    </header>
-    <main>
-      <section class="primeraPantalla" id="primeraPantalla">
-        <div class="img">
-          <h1>MEMORY MATCH</h1>
-          <img src="imagenes/baraja.jpg" alt="">
-        </div>
-        <div class="input">
-          <input id="nombreUsuario" class="name" type="text" placeholder="Escribe tu nombre" value="">
-          <button type="submit" class="boton"><a href="#div-boton" id="botonAJugar">A jugar!</a></button>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Match</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+  </header>
+  <main>
+    <section class="primeraPantalla" id="primeraPantalla">
+      <div class="img">
+        <h1>MEMORY MATCH</h1>
+        <img src="imagenes/baraja.jpg" alt="">
+      </div>
+      <div class="input">
+        <input id="nombreUsuario" class="name" type="text" placeholder="Escribe tu nombre" value="">
+        <button type="submit" class="boton"><a href="#div-boton" id="botonAJugar">A jugar!</a></button>
+      </div>
+    </section>
+
+
+
+    <section class="segundaPantalla" id="segundaPantalla">
+      <section class="div-boton" id="div-boton">
+        <button type="submit" class="jugar"><a href="#" id="jugar">Jugar!</a></button>
       </section>
 
-     
+      <header>
+        <h2 id="saludoUsuario">
+          </h1>
+      </header>
 
-      <section class="segundaPantalla" id="segundaPantalla">
-        <section class="div-boton" id="div-boton">
-          <button type="submit" class="jugar"><a href="#" id="jugar">Jugar!</a></button>
-        </section>
-        
-        <header>
-          <h2 id="saludoUsuario"></h1> 
-        </header>
-       
-        <section class="tableroPuntaje">
-         
-          <ul>
-            <p id = "score">Puntuación:  0</p>
-            
-          </ul>
-         </section>
+      <section class="tableroPuntaje">
 
-         <section>
-            <div id="root"></div>
-         </section>
-        </section>
+        <ul>
+          <p id="score">Puntuación: 0</p>
 
-        <section class="vModal" id="vModal">
-          
-          <div class="modal-content" id="modal-content">
-            <h2>Ganaste !!!</h2>
-                <img class="modal-img" src="imagenes/snoopy.gif" alt="snoopy">
-                <button id="volver" class="btn-volver">Volver a jugar <a href="#"></a>  </button>
-              </div>
-         
-        </section> 
+        </ul>
+      </section>
 
-    </main>
-    <footer></footer>
-    <script src="main.js" type="module"></script>
-  </body>
+      <section>
+        <div id="root"></div>
+      </section>
+    </section>
+
+    <section class="vModal" id="vModal">
+
+      <div class="modal-content" id="modal-content">
+        <h2>Ganaste !!!</h2>
+        <img class="modal-img" src="imagenes/snoopy.gif" alt="snoopy">
+        <button id="volver" class="btn-volver">Volver a jugar <a href="#"></a> </button>
+      </div>
+
+    </section>
+
+  </main>
+  <footer></footer>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
