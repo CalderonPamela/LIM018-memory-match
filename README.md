@@ -6,7 +6,7 @@ El Juego esta diseñado para personas que deseen pasar un tiempo de distraccion 
 La temática el juego esta formada por iconos de logos de programacion por lo que esta orientado a personas que son aficionadas o dedicadas a la programación.
 
 ### Historias de usuario
-Historia 1
+:pushpin: Historia 1
 
 COMO jugador de memory match
 QUIERO ingresar a una página de juegos de memory match
@@ -89,7 +89,6 @@ CRITERIOS DE ACEPTACIÓN
 DEFINICIÓN DE TERMINADO
 1. Cuando se visualice todas las cartas destapadas significa que el juego ha terminado y el usuario ha ganado.
 2. Automáticamente le saldrá una ventana felicitando al usuario.
-
 
 ### Diseño de la Interfaz de Usuario
 
